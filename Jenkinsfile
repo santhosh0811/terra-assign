@@ -31,9 +31,9 @@ pipeline {
                         dir("terraform") {
                             // Check if the "terra-cloud" directory exists
                             sh '''
-                                if [ -d "terra-cloud" ]; then
+                                if [ -d "terra-assign" ]; then
                                     echo "Directory exists. Deleting it..."
-                                    rm -rf terra-cloud
+                                    rm -rf terra-assign
                                 fi
                                 echo "Cloning the repository..."
                                 git clone "https://github.com/santhosh0811/terra-assign.git"
