@@ -37,7 +37,7 @@ resource "aws_instance" "ourfirst" {
   
   tags = {
     Name      = "ec2-test"
-    Location  = "Europe"
+    Location  = "mumbai"
   }
 }
 
