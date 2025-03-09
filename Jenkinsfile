@@ -112,7 +112,7 @@ pipeline {
           stage('Get EC2 Public IP') {
             steps {
                 script {
-                    dir('terraform/terra-cloud') {
+                    dir('terraform/terra-assign') {
                     def output = sh(script: "terraform output -raw ec2_public_ip", returnStdout: true).trim()
                     env.EC2_IP = output
                     echo "EC2 Public IP: ${env.EC2_IP}"
