@@ -51,7 +51,7 @@ pipeline {
             }
             
           steps {
-                dir('terraform/terra-cloud') {  // Adjust path as needed
+                dir('terraform/terra-assign') {  // Adjust path as needed
                     sh 'terraform init -input=false'
                     sh 'terraform workspace select ${environment} || terraform workspace new ${environment}'
                     sh "terraform plan -input=false -out tfplan "
@@ -85,7 +85,7 @@ pipeline {
             }
             
            steps {
-                dir('terraform/terra-cloud') {  // Add this directory block, same as in Plan stage
+                dir('terraform/terra-assign') {  // Add this directory block, same as in Plan stage
                     sh "terraform apply -input=false tfplan"
                 }
             }
@@ -97,7 +97,7 @@ pipeline {
             }
         
         steps {
-                dir('terraform/terra-cloud') {  // Add this directory block, same as in Plan stage
+                dir('terraform/terra-assign') {  // Add this directory block, same as in Plan stage
            sh "terraform destroy --auto-approve"
                 }
         }
